@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "product_config.h"
+#include "alert_messages.h"
 #include "send_alert.h"
 
 void sendToController(BreachType breachType) {
@@ -9,17 +10,11 @@ void sendToController(BreachType breachType) {
 
 void sendToEmail(BreachType breachType) {
   const char* recepient = "a.b@c.com";
-  switch(breachType) {
-    case TOO_LOW:
+
+  if(breachType != NORMAL)
+  {
       printf("To: %s\n", recepient);
-      printf("Hi, the temperature is too low\n");
-      break;
-    case TOO_HIGH:
-      printf("To: %s\n", recepient);
-      printf("Hi, the temperature is too high\n");
-      break;
-    case NORMAL:
-      break;
+      printf(emailAlertMessageInEng[breachType]);
   }
 }
 
