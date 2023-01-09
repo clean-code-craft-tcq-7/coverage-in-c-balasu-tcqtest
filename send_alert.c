@@ -10,7 +10,7 @@ void sendToController(BreachType breachType, void (*alertMessage)(char*)) {
   alertMessage(msgBuf);
 }
 
-void sendToEmail(BreachType breachType) {
+void sendToEmail(BreachType breachType, void (*alertMessage)(char*)) {
   const char* recepient = "a.b@c.com";
   char msgBuf[100];
   if(breachType != NORMAL)

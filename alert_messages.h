@@ -1,3 +1,3 @@
 #pragma once
 
-extern char* emailAlertMessageInEng[MAX_BREACH_TYPE];
+extern const char* emailAlertMessageInEng[MAX_BREACH_TYPE];
