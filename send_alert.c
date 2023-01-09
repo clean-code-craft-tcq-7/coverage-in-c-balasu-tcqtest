@@ -3,18 +3,20 @@
 #include "alert_messages.h"
 #include "send_alert.h"
 
-void sendToController(BreachType breachType) {
+void sendToController(BreachType breachType, void (*alertMessage)(char*)) {
   const unsigned short header = 0xfeed;
-  printf("%x : %x\n", header, breachType);
+  char msgBuf[50];
+  sprintf(msgBuf,"%x : %x\n", header, breachType);
+  alertMessage(msgBuf);
 }
 
 void sendToEmail(BreachType breachType) {
   const char* recepient = "a.b@c.com";
-
+  char msgBuf[100];
   if(breachType != NORMAL)
   {
-      printf("To: %s\n", recepient);
-      printf(emailAlertMessageInEng[breachType]);
+      sprintf(msgBuf,"To: %s\n%s", recepient, emailAlertMessageInEng[breachType]);
+      alertMessage(msgBuf);
   }
 }
 
