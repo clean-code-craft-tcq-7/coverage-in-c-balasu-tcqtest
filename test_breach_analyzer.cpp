@@ -24,6 +24,6 @@ TEST_CASE("Value equal to upper limit", "[inferBreach]") {
   REQUIRE(inferBreach(30, 20, 30) == NORMAL);
 }
 
-TEST_CASE("Check ouptut of interface function", ["interfaceFunc"]){
+TEST_CASE("Check ouptut of interface function", "[interfaceFunc]"){
     REQUIRE(classifyTemperatureBreach(PASSIVE_COOLING, 20) == NORMAL);
 }
