@@ -25,8 +25,8 @@ typedef struct {
 } BatteryCharacter;
 
 typedef struct{
-    int upperLimit;
     int lowerLimit;
+    int upperLimit;
 } LimitValue;
 
 extern LimitValue limitValuesList[MAX_COOLING_TYPE];
