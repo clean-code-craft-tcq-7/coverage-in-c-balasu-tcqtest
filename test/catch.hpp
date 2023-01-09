@@ -12,9 +12,6 @@
 #define TWOBLUECUBES_SINGLE_INCLUDE_CATCH_HPP_INCLUDED
 // start catch.hpp
 
-#undef MINSIGSTKSZ
-#define MINSIGSTKSZ 16384
-
 #define CATCH_VERSION_MAJOR 2
 #define CATCH_VERSION_MINOR 13
 #define CATCH_VERSION_PATCH 0
@@ -8039,6 +8036,9 @@ namespace Catch {
 #elif defined ( CATCH_CONFIG_POSIX_SIGNALS )
 
 #include <signal.h>
+
+#undef MINSIGSTKSZ
+#define MINSIGSTKSZ 16384
 
 namespace Catch {
 
