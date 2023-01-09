@@ -13,7 +13,7 @@ TEST_CASE("Value between the limit") {
 }
 
 TEST_CASE("Value greater than the upper limit") {
-  REQUIRE(inferBreach(22, 20, 30) == TOO_HIGH);
+  REQUIRE(inferBreach(32, 20, 30) == TOO_HIGH);
 }
 
 TEST_CASE("Value equal to lower limit") {
