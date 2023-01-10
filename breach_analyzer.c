@@ -20,7 +20,7 @@ BreachType classifyTemperatureBreach(
 
     limitValues = getLimitValues(coolingType);
 
-  return inferBreach(temperatureInC, lowerLimit, upperLimit);
+  return inferBreach(temperatureInC, limitValues.lowerLimit, limitValues.upperLimit);
 }
 
 LimitValue getLimitValues(CoolingType coolingType)
