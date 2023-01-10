@@ -31,3 +31,4 @@ typedef struct{
 } LimitValue;
 
 extern LimitValue limitValuesList[MAX_COOLING_TYPE];
+extern const char* recepient;

@@ -7,3 +7,4 @@ LimitValue limitValuesList[MAX_COOLING_TYPE] ={
                 {.lowerLimit = 0, .upperLimit = 40},
 };
 
+const char* recepient = "a.b@c.com";

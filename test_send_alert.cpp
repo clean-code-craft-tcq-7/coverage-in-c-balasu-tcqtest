@@ -4,7 +4,7 @@
 #include "product_config.h"
 #include "send_alert.h"
 
-char printStr[50];
+char printStr[100];
 
 void printfunc(char* buff)
 {
@@ -31,4 +31,17 @@ TEST_CASE("Alert Controller Too High Breach"){
 TEST_CASE("Alert Mail Normal"){
 
     alertTypeList[TO_EMAIL](NORMAL, &printfunc);
+    REQUIRE(strlen(printStr) == 0);
+}
+
+TEST_CASE("Alert Mail Too Low"){
+
+    alertTypeList[TO_EMAIL](TOO_LOW, &printfunc);
+    REQUIRE(strcmp(printStr,"To: a.b@c.com\nHi, the temperature is too low\n") == 0);
+}
+
+TEST_CASE("Alert Mail Too High"){
+
+    alertTypeList[TO_EMAIL](TOO_HIGH, &printfunc);
+    REQUIRE(strcmp(printStr,"To: a.b@c.com\nHi, the temperature is too high\n") == 0);
 }
