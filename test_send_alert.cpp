@@ -8,7 +8,6 @@ char printStr[100];
 
 void printfunc(char* buff)
 {
-    memset(printStr,0,100);
     strcpy(printStr, buff);
 }
 TEST_CASE("Alert Controller Too Low Breach"){
@@ -29,11 +28,12 @@ TEST_CASE("Alert Controller Too High Breach"){
     REQUIRE(strcmp(printStr,"feed : 2\n") == 0);
 }
 
-//TEST_CASE("Alert Mail Normal"){
-//
-//    alertTypeList[TO_EMAIL](NORMAL, &printfunc);
-//    REQUIRE(strlen(printStr) == 0);
-//}
+TEST_CASE("Alert Mail Normal"){
+
+    memset(printStr,0,100);
+    alertTypeList[TO_EMAIL](NORMAL, &printfunc);
+    REQUIRE(strlen(printStr) == 0);
+}
 
 TEST_CASE("Alert Mail Too Low"){
 
