@@ -13,6 +13,5 @@ void printfunc(char* buff)
 TEST_CASE("Alert Controller Too Low Breach"){
 
     alertTypeList[TO_CONTROLLER](TOO_LOW, &printfunc);
-    printf(printStr);
-    REQUIRE(strcmp(printStr,"0xfeed : 0x01\n") == 0);
+    REQUIRE(strcmp(printStr,"feed : 1\n") == 0);
 }
