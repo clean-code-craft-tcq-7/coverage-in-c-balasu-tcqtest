@@ -9,6 +9,7 @@ char printStr[100];
 void printfunc(char* buff)
 {
     strcpy(printStr, buff);
+    printf(buff);
 }
 TEST_CASE("Alert Controller Too Low Breach"){
 
