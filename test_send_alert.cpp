@@ -27,3 +27,8 @@ TEST_CASE("Alert Controller Too High Breach"){
     alertTypeList[TO_CONTROLLER](TOO_HIGH, &printfunc);
     REQUIRE(strcmp(printStr,"feed : 2\n") == 0);
 }
+
+TEST_CASE("Alert Mail Normal"){
+
+    alertTypeList[TO_EMAIL](NORMAL, &printfunc);
+}
