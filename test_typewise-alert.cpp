@@ -20,3 +20,14 @@ TEST_CASE("Alert via Email HI_ACTIVE_COOLING high breach"){
 
     REQUIRE(strcmp(printStr1,"To: a.b@c.com\nHi, the temperature is too high\n") == 0);
 }
+
+TEST_CASE("Alert via Email HI_ACTIVE_COOLING normal"){
+
+    BatteryCharacter batteryChar;
+    batteryChar.coolingType = HI_ACTIVE_COOLING;
+    memset(printStr1, 0, 100);
+
+    checkAndAlert(TO_EMAIL, batteryChar, 30, &printfunc1);
+
+    REQUIRE(strlen(printStr1) == 0);
+}
