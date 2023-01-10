@@ -8,6 +8,7 @@ char printStr[100];
 
 void printfunc(char* buff)
 {
+    memset(printStr,0,100);
     strcpy(printStr, buff);
 }
 TEST_CASE("Alert Controller Too Low Breach"){
