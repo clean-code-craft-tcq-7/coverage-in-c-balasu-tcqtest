@@ -27,3 +27,27 @@ TEST_CASE("Value equal to upper limit", "[inferBreach]") {
 TEST_CASE("Check ouptut of interface function", "[interfaceFunc]"){
     REQUIRE(classifyTemperatureBreach(PASSIVE_COOLING, 20) == NORMAL);
 }
+
+TEST_CASE("Check Limit Value PASSIVE_COOLING") {
+
+    LimitValue limitValues = getLimitValues(PASSIVE_COOLING);
+
+    REQUIRE(limitValues.lowerLimit == 0);
+    REQUIRE(limitValues.upperLimit == 35);
+}
+
+TEST_CASE("Check Limit Value HI_ACTIVE_COOLING") {
+
+    LimitValue limitValues = getLimitValues(HI_ACTIVE_COOLING);
+
+    REQUIRE(limitValues.lowerLimit == 0);
+    REQUIRE(limitValues.upperLimit == 45);
+}
+
+TEST_CASE("Check Limit Value MED_ACTIVE_COOLING") {
+
+    LimitValue limitValues = getLimitValues(MED_ACTIVE_COOLING);
+
+    REQUIRE(limitValues.lowerLimit == 0);
+    REQUIRE(limitValues.upperLimit == 40);
+}

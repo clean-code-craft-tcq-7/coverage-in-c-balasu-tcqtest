@@ -16,8 +16,19 @@ BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
 BreachType classifyTemperatureBreach(
     CoolingType coolingType, double temperatureInC) {
 
-  int lowerLimit = limitValuesList[coolingType].lowerLimit;
-  int upperLimit = limitValuesList[coolingType].upperLimit;
+    LimitValue limitValues;
+
+    limitValues = getLimitValues(coolingType);
 
   return inferBreach(temperatureInC, lowerLimit, upperLimit);
+}
+
+LimitValue getLimitValues(CoolingType coolingType)
+{
+    LimitValue retVariable;
+
+    retVariable.lowerLimit = limitValuesList[coolingType].lowerLimit;
+    retVariable.upperLimit = limitValuesList[coolingType].upperLimit;
+
+    return retVariable;
 }
