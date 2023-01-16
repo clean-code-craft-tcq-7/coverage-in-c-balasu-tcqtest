@@ -31,7 +31,7 @@ TEST_CASE("Test alerter for  HI_ACTIVE_COOLING high breach"){
 
     alertTypeList[TO_CONTROLLER] = &cntrlrAlertMock;
 
-    checkAndAlert(TO_EMAIL, batteryChar, 46);
+    checkAndAlert(TO_CONTROLLER, batteryChar, 46);
     REQUIRE(test_cntrlrAlerted == 1);
     REQUIRE(test_cntrlrBrchType == TOO_HIGH);
 
