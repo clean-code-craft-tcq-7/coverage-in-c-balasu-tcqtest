@@ -5,11 +5,11 @@
 #include "typewise-alert.h"
 
 void checkAndAlert(
-    AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC, void (*alertMessage)(char*))
+    AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC)
 {
 
     BreachType breachType = classifyTemperatureBreach(batteryChar.coolingType, temperatureInC);
 
-    alertTypeList[alertTarget](breachType, alertMessage);
+    alertTypeList[alertTarget](breachType);
 
 }
