@@ -15,7 +15,7 @@ void sendToEmail(BreachType breachType) {
   if(breachType != NORMAL)
   {
       sprintf(msgBuf,"To: %s\n%s", recepient, emailAlertMessageInEng[breachType]);
-      printf(msgBuf);
+      printf("%s",msgBuf);
   }
 }
 
